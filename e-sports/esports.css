@@ -1,0 +1,273 @@
+body {
+    background: #000000;
+    color: #000000;
+    font-family: 'Orbitron', sans-serif;
+    padding: 40px;
+  }
+  
+  .faq-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .faq-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .faq-item {
+    background: linear-gradient(145deg, #000000, #201f1f);
+    border: 2px solid #ffd900;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    padding: 15px 20px;
+    position: relative;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+  }
+  
+  .faq-question::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.3s;
+  }
+  
+  .faq-item.open .faq-question::after {
+    transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    margin-top: 10px;
+  }
+  
+  .faq-item.open .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    line-height: 1.8;
+  }
+  
+
+
+
+
+
+
+
+
+
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    /*background: url('https://i.postimg.cc/HkdWQD8c/Black-and-White-Edgy-Gaming-Youtube-Banner-23.png') no-repeat center center fixed;*/
+    /*background-color: #000000; */
+    background-size: cover;
+    color: white;
+  }
+  
+  .gaming-faq-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  
+  .faq-column {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    background: rgba(0, 0, 0, 0.88);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .faq-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px #000000, 0 0 20px #ffd446;
+  }
+  
+  .faq-title {
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+  }
+  
+  .faq-title i {
+    margin-right: 10px;
+  }
+  
+  .faq-title::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .faq-item.open .faq-title::after {
+    content: "▲";
+  }
+  
+  .faq-content {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .faq-item.open .faq-content {
+    max-height: 500px;
+    padding: 20px;
+    opacity: 1;
+  }
+  
+
+
+
+
+
+
+
+
+  
+
+
+.breadcrumb-area {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.banner-shape {
+    margin-top: 50;
+    background: #f0c804;
+    padding: 10px 5px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    width: 100%;
+    max-width:700px;
+    margin: -50px auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    animation: slideDown 1s ease-in-out;
+    color: #111;
+    background: url('https://i.postimg.cc/brS6sYnS/bg.jpg') no-repeat center center; /* Add background image */
+
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.banner-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(20, 20, 19);
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+/* Animation */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .banner-shape {
+        clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        padding: 30px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.vertical-faq-label {
+    position: fixed;
+    top: 50%;
+    right: -60px; /* closer to visible area */
+    transform: rotate(90deg) translateY(-50%);
+    transform-origin: center;
+    font-size: 160px;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(0, 0, 0, 0.05); /* lighter but more visible */
+    -webkit-text-stroke: 2px rgba(253, 196, 40, 0.2); /* stronger stroke */
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 10px;
+
+
+    writing-mode: vertical-rl; /* Optional: makes text vertical from bottom to top */
+    transform: rotate(180deg); /* Optional: flips vertical text to top-to-bottom */
+    font-size: 14px; /* Smaller font */
+    color: #fff; /* Or any color you want */
+    position: absolute; /* Or use flex/grid depending on your layout */
+    right: 20px; /* Margin from the right */
+    top: 50%; /* Vertical center */
+    transform: translateY(-50%) rotate(180deg); /* Keep the flip & center */
+
+}
+
+.vertical-faq-label {
+    font-size: 140px;
+    color: #000000;
+    position: absolute;
+    right: 20px;
+    top: 450px; /* Adjust based on your layout */
+  }
+  

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ Test</title>
+
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+    }
+
+    /* FAQ Container */
+    .faq-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-column {
+      flex: 1;
+    }
+
+    .faq-item {
+      background: rgba(0, 0, 0, 0.88);
+      border: 2px solid #ffd900;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      transition: 0.3s;
+    }
+
+    .faq-title {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      color: #fff;
+    }
+
+    .faq-title::after {
+      content: '▼';
+      position: absolute;
+      right: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-title::after {
+      content: '▲';
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      margin-top: 10px;
+    }
+
+    .faq-item.open .faq-content {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    /* Vertical "FAQ" Label */
+    .vertical-faq-label {
+      position: fixed;
+      top: 50%;
+      right: -100px;
+      transform: rotate(90deg) translateY(-50%);
+      transform-origin: center;
+      font-size: 160px;
+      font-weight: 900;
+      font-family: 'Orbitron', sans-serif;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vertical Label -->
+  <div class="vertical-faq-label">FAQ</div>
+
+  <!-- FAQ Section -->
+  <section class="faq-container">
+    <div class="faq-column">
+      <div class="faq-item">
+        <div class="faq-title">What is E-Sports?</div>
+        <div class="faq-content">
+          Esports is competitive gaming, watched by millions and played professionally.
+        </div>
+      </div>
+    </div>
+    <div class="faq-column">
+      <div class="faq-item">
+        <div class="faq-title">Popular Games?</div>
+        <div class="faq-content">
+          League of Legends, Valorant, CS:GO, Fortnite, and more.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-title').forEach(title => {
+      title.addEventListener('click', () => {
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== title.parentElement) {
+            item.classList.remove('open');
+          }
+        });
+        title.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
