@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approved Connections</title>
+
+  <!-- Link your CSS -->
+  <link rel="stylesheet" href="C:\Users\Mega-PC\Desktop\quote generator\approved connections\Approved connections.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS & Chart.js -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body onload="AOS.init()">
+  <div class="container">
+    <!-- Navbar -->
+    <div class="navbar">
+      <ul>
+        <li>Players</li>
+        <li class="active">Transfers</li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="main-content">
+      <!-- Sidebar Charts -->
+      <div class="stats-panel">
+        <div class="stats-section" data-aos="fade-up">
+          <h3>Top Organizations (Transfers)</h3>
+          <canvas id="orgChart" width="240" height="160"></canvas>
+        </div>
+        <div class="stats-section" data-aos="fade-up">
+          <h3>Top Games</h3>
+          <canvas id="gameChart" width="240" height="160"></canvas>
+        </div>
+      </div>
+
+      <!-- Transfer Table Section -->
+      <div class="table-section" data-aos="fade-right">
+        <div class="filters">
+          <div class="filters-left">
+            <input type="text" placeholder="Search player by name" />
+          </div>
+          <div class="filters-right">
+            <label>Period by:</label>
+            <select class="month-select">
+              <option disabled selected>Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <select class="year-select">
+              <option disabled selected>Year</option>
+              <option>2025</option>
+              <option>2024</option>
+            </select>
+
+            <label>Status by:</label>
+            <div class="status-buttons">
+              <button class="join">Join</button>
+              <button class="transfer">Transfer</button>
+              <button class="leave">Leave</button>
+            </div>
+          </div>
+        </div>
+
+        <table class="approved-table">
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Game / Swap</th>
+              <th>Old Team</th>
+              <th>Join Date</th>
+              <th>New Team</th>
+              <th>Join Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="pipokun" class="player-photo"> pipokun</div></td>
+              <td>LoL</td><td>Free Agent</td><td>-</td><td>ODDP</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="alishor" class="player-photo"> alishor</div></td>
+              <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Hammerul" class="player-photo"> Hammerul</div></td>
+              <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Ninja" class="player-photo"> Ninja</div></td>
+              <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Zeref" class="player-photo"> Zeref</div></td>
+              <td>Dota 2</td><td>Free Agent</td><td>-</td><td>CK</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Beyond" class="player-photo"> Beyond</div></td>
+              <td>Dota 2</td><td>Free Agent</td><td>17.05.2023</td><td>YB</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="PEPPI" class="player-photo"> PEPPI</div></td>
+              <td>Overwatch</td><td>Free Agent</td><td>11.12.2024</td><td>99DIVINE</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Ezhan" class="player-photo"> Ezhan</div></td>
+              <td>Overwatch</td><td>Free Agent</td><td>12.06.2023</td><td>99DIVINE</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="GO1" class="player-photo"> GO1</div></td>
+              <td>LoL</td><td>Free Agent</td><td>13.11.2016</td><td>DF</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+              <td><div class="player-cell"><img src="player-photo.jpg" alt="Andrew" class="player-photo"> Andrew</div></td>
+              <td>Valorant</td><td>Free Agent</td><td>06.03.2024</td><td>KRU</td><td>06.05.2025</td>
+            </tr>
+            <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="pipokun" class="player-photo"> pipokun</div></td>
+                <td>LoL</td><td>Free Agent</td><td>-</td><td>ODDP</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="alishor" class="player-photo"> alishor</div></td>
+                <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Hammerul" class="player-photo"> Hammerul</div></td>
+                <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Ninja" class="player-photo"> Ninja</div></td>
+                <td>LoL</td><td>Free Agent</td><td>-</td><td>TSC</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Zeref" class="player-photo"> Zeref</div></td>
+                <td>Dota 2</td><td>Free Agent</td><td>-</td><td>CK</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Beyond" class="player-photo"> Beyond</div></td>
+                <td>Dota 2</td><td>Free Agent</td><td>17.05.2023</td><td>YB</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="PEPPI" class="player-photo"> PEPPI</div></td>
+                <td>Overwatch</td><td>Free Agent</td><td>11.12.2024</td><td>99DIVINE</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Ezhan" class="player-photo"> Ezhan</div></td>
+                <td>Overwatch</td><td>Free Agent</td><td>12.06.2023</td><td>99DIVINE</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="GO1" class="player-photo"> GO1</div></td>
+                <td>LoL</td><td>Free Agent</td><td>13.11.2016</td><td>DF</td><td>06.05.2025</td>
+              </tr>
+              <tr>
+                <td><div class="player-cell"><img src="player-photo.jpg" alt="Andrew" class="player-photo"> Andrew</div></td>
+                <td>Valorant</td><td>Free Agent</td><td>06.03.2024</td><td>KRU</td><td>06.05.2025</td>
+              </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+            <button onclick="prevPage()">Prev</button>
+            <span id="pageInfo">Page 1</span>
+            <button onclick="nextPage()">Next</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const rowsPerPage = 10;
+    let currentPage = 1;
+  
+    function paginateTable() {
+      const table = document.querySelector('.approved-table tbody');
+      const rows = table.querySelectorAll('tr');
+      const totalPages = Math.ceil(rows.length / rowsPerPage);
+  
+      rows.forEach((row, index) => {
+        row.style.display =
+          index >= (currentPage - 1) * rowsPerPage &&
+          index < currentPage * rowsPerPage
+            ? ''
+            : 'none';
+      });
+  
+      document.getElementById('pageInfo').innerText = `Page ${currentPage}`;
+      document.querySelector('.pagination button[onclick="prevPage()"]').disabled = currentPage === 1;
+      document.querySelector('.pagination button[onclick="nextPage()"]').disabled = currentPage === totalPages;
+    }
+  
+    function nextPage() {
+      currentPage++;
+      paginateTable();
+    }
+  
+    function prevPage() {
+      currentPage--;
+      paginateTable();
+    }
+  
+    // Initialize pagination on load
+    window.addEventListener('DOMContentLoaded', paginateTable);
+  </script>
+  
+  <!-- Chart.js Script -->
+  <script>
+    const orgCtx = document.getElementById('orgChart').getContext('2d');
+    new Chart(orgCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Twisted Minds', 'Team Falcons', 'Weibo Gaming', 'Al Qadsiah', 'Team Liquid'],
+        datasets: [{
+          label: 'Transfers Count',
+          data: [129, 119, 88, 84, 82],
+          backgroundColor: '#7a5af8'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#f0c804',
+              font: {
+                size: 14,
+                weight: 'bold'
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#ccc' },
+            grid: { color: '#333' }
+          },
+          y: {
+            ticks: { color: '#ccc' },
+            grid: { color: '#333' }
+          }
+        }
+      }
+    });
+
+    const gameCtx = document.getElementById('gameChart').getContext('2d');
+    new Chart(gameCtx, {
+      type: 'bar',
+      data: {
+        labels: ['LoL', 'Valorant', 'CS:GO', 'Overwatch', 'Dota 2'],
+        datasets: [{
+          label: 'Transfers Count',
+          data: [2500, 2200, 1900, 1700, 1400],
+          backgroundColor: '#f0c804'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#f0c804',
+              font: {
+                size: 14,
+                weight: 'bold'
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#ccc' },
+            grid: { color: '#333' }
+          },
+          y: {
+            ticks: { color: '#ccc' },
+            grid: { color: '#333' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
