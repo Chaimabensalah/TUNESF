@@ -1,0 +1,462 @@
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* ========== Topbar ========== */
+.header-topbar.topbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 5;
+  color: #000;
+  font-size: 14px;
+  line-height: 40px;
+  background: transparent;
+  pointer-events: none;
+}
+
+.header-topbar.topbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 70%;
+  background-color: #f0c804;
+  clip-path: polygon(0 0, 100% 0, 95.5% 100%, 4.5% 100%);
+  z-index: -1;
+  pointer-events: auto;
+}
+
+.topbar-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  pointer-events: auto;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons a {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #f0c804;
+  color: #fff;
+  border-color: #f0c804;
+}
+/* ========== Navbar ========== */
+header.navbar {
+  display: flex;
+  flex-direction: row;              /* Make it horizontal */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 999;
+  background-color: transparent;
+  flex-wrap: wrap;
+}
+.nav-wrapper {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-wrapper.show {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 50px;
+  height: auto;
+  width: auto;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  color: #f0c804;
+  cursor: pointer;
+}
+
+
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+/* ========== Navigation Links ========== */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+nav ul li a.active {
+  color: #f0c804;
+}
+
+/* ========== Button Style ========== */
+.btn-angular {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #f0c804;
+  color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+  transition: background 0.3s ease;
+}
+
+.btn-angular:hover {
+  background-color: #ffda33;
+}
+
+.btn-angular:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+section.hero {
+  height: 70vh;
+  background: url('https://i.postimg.cc/9XSVDrh6/Chat-GPT-Image-May-2-2025-11-35-21-AM.png') center center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 72% 87%, 64% 100%, 36% 100%, 28% 88%, 0 88%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero h1, .hero h3 {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 1s ease;
+}
+
+.hero h1.visible, .hero h3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h1 {
+  font-size: 120px;
+  color: white;
+  margin-top: -250px;
+}
+
+.hero h3 {
+  font-size: 50px;
+  color: #f0c804;
+  margin-top: -200px;
+  transition-delay: 0.3s;
+}
+
+.hero-img {
+  position: absolute;
+  bottom: 0;
+  max-height: 85%;
+  z-index: 2;
+}
+
+.dots {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 2;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.dot.active {
+  background: #f0c804;
+  border-color: #f0c804;
+}
+/* ========== Mobile Styles ========== */
+@media (max-width: 768px) {
+  header.navbar {
+    display: flex;                  /* horizontal layout */
+    flex-direction: row;            /* ensure logo and icon are side-by-side */
+    justify-content: space-between; /* push logo left, icon right */
+    align-items: center;            /* vertically align both */
+    padding: 10px 20px;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    max-height: 50px;
+    height: auto;
+    width: auto;
+  }
+
+  .menu-toggle {
+    display: flex;                  /* make sure it's visible */
+    align-items: center;
+    font-size: 28px;
+    color: #3704f0;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle.show-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #0f0f0f;
+    padding: 8px 10px;
+    border-radius: 4px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #0f0f0f;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .button-group {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 20px;
+    background: #0f0f0f;
+    text-align: center;
+  }
+  #navMenu .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  
+  
+  .button-group.show {
+    display: flex;
+  }
+
+  .header-topbar.topbar {
+    height: auto;
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 8px 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-topbar.topbar:before {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .topbar-ul {
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px 0;
+  }
+
+  .topbar-ul li {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #0f0f0f;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    z-index: 1000;
+    padding-bottom: 20px;
+  }
+  
+  .mobile-menu.show {
+    display: flex;
+  }
+  
+  .mobile-menu nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  
+  .mobile-menu nav ul li {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .mobile-menu .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding: 20px;
+  }
+  
+}
+
+/* ========== Desktop Overrides ========== */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    background: transparent;
+    position: static;
+    padding: 0;
+  }
+
+  .button-group {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+
+  .button-group .btn-angular {
+    margin-left: 10px;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+}

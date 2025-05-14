@@ -185,16 +185,20 @@
   }
   
   .stats-section {
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 0 10px rgba(240, 200, 4, 0.1);
-    transition: box-shadow 0.3s ease;
+    width: 350px;
+    background: linear-gradient(#1a1a1a, #1a1a1a) padding-box,
+                linear-gradient(135deg, #f0c804, #ffda2d) border-box;
+    border: 0.5px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
   }
   
   .stats-section:hover {
-    box-shadow: 0 0 20px rgba(240, 200, 4, 0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 0 5px #ffcc00;
   }
   
   .stats-section h3 {

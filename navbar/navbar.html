@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlayVibe - Solo Player</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="navbar.css" /> <!-- Correct relative path -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Topbar -->
+  <div class="header-topbar topbar">
+    <ul class="topbar-ul">
+      <li>Welcome to Biggest Esports Tournaments – Mon – Sun: 9.00 am – 5.00pm</li>
+      <li>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <img src="https://i.postimg.cc/13mR1ZK0/gold2-1.png" alt="Logo" />
+  </div>
+
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars" id="toggleIcon"></i>
+  </div>
+
+  <nav>
+    <ul id="navMenu">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Community</a></li>
+      <li><a href="#">E-matchmaking</a></li>
+      <li><a href="#">Event</a></li>
+      <li><a href="#">NTD</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact Us</a></li>
+    
+      <!-- 👇 Add buttons directly inside the sidebar menu -->
+      <li class="button-group">
+        <a href="#" class="btn-angular">LOGIN ▶</a>
+        <a href="#" class="btn-angular">SIGN UP ▶</a>
+      </li>
+    </ul>
+    
+  </nav>
+  
+
+  <div class="button-group" id="authButtons">
+    <a href="#" class="btn-angular">LOGIN ▶</a>
+    <a href="#" class="btn-angular">SIGN UP ▶</a>
+  </div>
+</header>
+
+
+
+  <!-- Navbar Toggle Script -->
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  const toggleIcon = document.getElementById('toggleIcon');
+
+  toggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show'); // ✅ only toggle ul
+    toggleIcon.classList.toggle('fa-bars');
+    toggleIcon.classList.toggle('fa-times');
+    toggle.classList.toggle('show-close');
+  });
+</script>
+
+  
+    
+
+
+
+
+
+
+  
+</body>
+</html>

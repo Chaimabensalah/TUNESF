@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clubs | Tunisia Esports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="C:\Users\Mega-PC\Desktop\quote generator\clubs\clubs.css">
+</head>
+<body>
+  <h1 class="page-title">Clubs Directory</h1>
+
+  <div class="filter-bar">
+    <input type="text" placeholder="Search club..." class="search-input" />
+    <select class="year-filter">
+      <option disabled selected>Filter by Year</option>
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+  </div>
+
+  <div class="club-container">
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/6q09SjMy/ashc.png" alt="Kerkennah" class="club-logo" />
+      <h3 class="club-name">KERKENNAH ESPORT</h3>
+      <p class="ref">REF: C001</p>
+      <div class="club-stats">
+        <div><strong>0</strong><br>Followers</div>
+        <div><strong>0</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/Y90fjZWw/gng.png" alt="SPL Gaming" class="club-logo" />
+      <h3 class="club-name">SPL GAMING</h3>
+      <p class="ref">REF: C002</p>
+      <div class="club-stats">
+        <div><strong>1</strong><br>Followers</div>
+        <div><strong>18</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/KYkt2BSZ/ezahrouni.png" alt="Royal Class" class="club-logo" />
+      <h3 class="club-name">ROYAL CLASS GAMING</h3>
+      <p class="ref">REF: C003</p>
+      <div class="club-stats">
+        <div><strong>2</strong><br>Followers</div>
+        <div><strong>12</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/T272rS54/avenir-ariana.png" alt="NextGen" class="club-logo" />
+      <h3 class="club-name">NEXTGEN GAMERS</h3>
+      <p class="ref">REF: C004</p>
+      <div class="club-stats">
+        <div><strong>4</strong><br>Followers</div>
+        <div><strong>22</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/L8QqCXWj/menzah-A.png" alt="Tunisia Titans" class="club-logo" />
+      <h3 class="club-name">TUNISIA TITANS</h3>
+      <p class="ref">REF: C005</p>
+      <div class="club-stats">
+        <div><strong>6</strong><br>Followers</div>
+        <div><strong>19</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1" >
+      <img src="https://i.postimg.cc/WbWrKXFD/thblack.png" alt="Digital Phantoms" class="club-logo" />
+      <h3 class="club-name">DIGITAL PHANTOMS</h3>
+      <p class="ref">REF: C006</p>
+      <div class="club-stats">
+        <div><strong>8</strong><br>Followers</div>
+        <div><strong>15</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/Y90BXrJL/spl.png" alt="Red Vipers" class="club-logo" />
+      <h3 class="club-name">RED VIPERS</h3>
+      <p class="ref">REF: C007</p>
+      <div class="club-stats">
+        <div><strong>12</strong><br>Followers</div>
+        <div><strong>21</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="1">
+      <img src="https://i.postimg.cc/441FKkMr/kbr.png" alt="Desert Hawks" class="club-logo" />
+      <h3 class="club-name">DESERT HAWKS</h3>
+      <p class="ref">REF: C008</p>
+      <div class="club-stats">
+        <div><strong>5</strong><br>Followers</div>
+        <div><strong>10</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="2">
+      <img src="https://i.postimg.cc/Fz2frnjG/atb.png" alt="Shadow Knights" class="club-logo" />
+      <h3 class="club-name">SHADOW KNIGHTS</h3>
+      <p class="ref">REF: C009</p>
+      <div class="club-stats">
+        <div><strong>10</strong><br>Followers</div>
+        <div><strong>24</strong><br>Members</div>
+      </div>
+    </div>
+
+    <div class="club-card" data-page="2">
+      <img src="https://i.postimg.cc/qqKTHk4b/atsl.png" alt="Esports Elite" class="club-logo" />
+      <h3 class="club-name">ESPORTS ELITE</h3>
+      <p class="ref">REF: C010</p>
+      <div class="club-stats">
+        <div><strong>9</strong><br>Followers</div>
+        <div><strong>30</strong><br>Members</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="pagination">
+    <button onclick="prevPage()">Prev</button>
+    <span id="pageInfo">Page 1</span>
+    <button onclick="nextPage()">Next</button>
+  </div>
+<br>
+<script>
+  let currentPage = 1;
+  const cardsPerPage = 10;
+  const cards = document.querySelectorAll('.club-card');
+  const pageInfo = document.getElementById('pageInfo');
+
+  function showPage(page) {
+    cards.forEach(card => {
+      const pageAttr = parseInt(card.getAttribute('data-page'));
+      card.style.display = pageAttr === page ? 'block' : 'none';
+    });
+    pageInfo.textContent = `Page ${page}`;
+  }
+
+  function nextPage() {
+    if (document.querySelector(`.club-card[data-page="${currentPage + 1}"]`)) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+
+  // Initial display
+  showPage(currentPage);
+</script>
+
+</body>
+</html>
